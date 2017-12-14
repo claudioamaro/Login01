@@ -17,7 +17,6 @@ def artigo(id):
 def pagina(id, nome):
 	return '<h1>Você está vendo a página ' + id + ' com o nome ' + nome + '</h1>'
 '''
-
 # static routes
 @get('/<filename:re:.*\.css>')
 def stylesheets(filename):
@@ -57,5 +56,6 @@ def error404(error):
 
 if __name__ == '__main__':
 	if os.environ.get()=='heroku':
-		run(host='0.0.0.0', port=int(os.environ.get('PORT',500)))
-	run(host='localhost', port=8080, debug=True, reloader=True)
+		run(host='0.0.0.0', port=int(os.environ.get('PORT',5000)))
+	else:
+		run(host='localhost', port=8080, debug=True, reloader=True)
